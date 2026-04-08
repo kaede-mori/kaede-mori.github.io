@@ -5,8 +5,8 @@
 
   .personal-profile__avatar{
     img{
-      border-radius: 5px;
-      box-shadow: 0 0 27px rgba(96, 96, 96, 0.34);
+      border-radius: $radius-md;
+      box-shadow: $shadow-soft;
       width: 90%;
       height: 380px;
       object-fit: cover;

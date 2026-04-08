@@ -1,6 +1,7 @@
-$font-family-main: 'Roboto', sans-serif;
-$font-family-title: 'Roboto Mono', monospace;
-$font-family-additional: 'Inconsolata', monospace;
+// Typography — loaded via Google Fonts in index.html (Noto Sans JP + IBM Plex Mono)
+$font-family-main: 'Noto Sans JP', sans-serif;
+$font-family-title: 'IBM Plex Mono', monospace;
+$font-family-additional: 'IBM Plex Mono', monospace;
 
 $font-size-t1: 44px;
 $font-size-t2: 36px;
@@ -16,17 +17,31 @@ $line-height-t4: 24px;
 $line-height-t5: 20px;
 $line-height-t6: 18px;
 
-//variables for color.css (comment them if you want change style
-
-$color-text-main: #555555;
-$color-text-additional: #999999;
+// Surfaces & text (refined neutrals, purple accent family)
+$color-bg-page: #f5f4f8;
+$color-text-main: #2e2e33;
+$color-text-additional: #6e6e78;
 $color-text-light: #ffffff;
-$color-accent: #6d56c1;
-$color-accent-additional: #7b67c7;
-$box-shadow-btn: 0px 1px 29px rgba(0,0,0,0.16);
-$linear-gradient-background: linear-gradient(54deg, rgba(74,76,179,0.95) 34%,rgba(207,157,157,0.95) 100%);
+$color-accent: #5c4ec4;
+$color-accent-additional: #7a6fd4;
+$color-link--visited: #4a3fa8;
 
-//variables for monochrome.css (uncomment if you want change style)
+$radius-sm: 6px;
+$radius-md: 12px;
+$radius-lg: 16px;
+$shadow-soft: 0 4px 24px rgba(32, 28, 64, 0.08);
+$shadow-card-hover: 0 12px 40px rgba(32, 28, 64, 0.12);
+$box-shadow-btn: 0px 1px 29px rgba(0, 0, 0, 0.12);
+
+// Hero / contact bands — slightly cooler, smoother blend than legacy template
+$linear-gradient-background: linear-gradient(
+  125deg,
+  rgba(52, 48, 112, 0.94) 0%,
+  rgba(92, 78, 196, 0.9) 42%,
+  rgba(168, 132, 158, 0.88) 100%
+);
+
+// variables for monochrome.css (uncomment in that theme file if used)
 
 //$color-text-main: #555555;
 //$color-text-additional: #999999;

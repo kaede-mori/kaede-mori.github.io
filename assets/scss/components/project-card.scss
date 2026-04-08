@@ -1,8 +1,13 @@
 .project-card{
   margin-left: 0;
-  margin-bottom: 40px;
-  transition: box-shadow 0.3s;
+  margin-bottom: 28px;
+  transition: box-shadow 0.35s ease, transform 0.35s ease;
   margin-right: 0;
+  border-radius: $radius-md;
+  overflow: hidden;
+  background: $color-text-light;
+  box-shadow: $shadow-soft;
+  border: 1px solid rgba(92, 78, 196, 0.1);
 
   .project-card__img{
     padding-right: 0;
@@ -11,28 +16,32 @@
     img{
       width: 100%;
       height: 100%;
+      min-height: 200px;
       object-fit: cover;
+      display: block;
     }
   }
 
   .project-card__info{
-    border: 1px solid #f1f1f1;
-    padding: 50px 50px 40px 30px;
+    border: none;
+    padding: 40px 40px 36px 32px;
+    background: $color-text-light;
   }
 
   .project-card__title{
     font-size: $font-size-t3;
     line-height: $line-height-t3;
     font-family: $font-family-title;
-    text-transform: uppercase;
+    text-transform: none;
     margin-bottom: 15px;
-    font-weight: 700;
+    font-weight: 600;
+    letter-spacing: -0.01em;
   }
 
   .project-card__description{
     font-size: $font-size-t4;
     line-height: $line-height-t4;
-    margin-bottom: 45px;
+    margin-bottom: 24px;
   }
 
   .project-card__stack{
@@ -45,15 +54,38 @@
   }
 
   .project-card__link{
-    margin-top: 55px;
+    margin-top: 12px;
+    margin-left: 12px;
     font-family: $font-family-title;
     font-size: $font-size-t5;
     line-height: $line-height-t5;
     float: right;
+    clear: both;
   }
 
   &:hover{
-    box-shadow: 0 1px 31px rgba(0,0,0,0.09);
-    cursor: pointer;
+    box-shadow: $shadow-card-hover;
+    transform: translateY(-2px);
+  }
+
+  &:focus-within{
+    box-shadow: $shadow-card-hover;
+    outline: 2px solid rgba(92, 78, 196, 0.4);
+    outline-offset: 2px;
+  }
+}
+
+.award-highlight{
+  color: #b71c1c;
+  font-weight: 600;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card{
+    transition: box-shadow 0.2s ease;
+
+    &:hover{
+      transform: none;
+    }
   }
 }

@@ -14,7 +14,8 @@
   }
 
   .resume-list__block{
-    border-left: 2px solid $color-accent;
+    position: relative;
+    border-left: 2px solid rgba(92, 78, 196, 0.35);
     padding-left: 25px;
     padding-bottom: 50px;
 
@@ -29,8 +30,9 @@
       position: absolute;
       content: "";
       border-radius: 50%;
-      background-color: #ffffff;
-      left: 10px;
+      background-color: $color-bg-page;
+      left: -7px;
+      top: 4px;
     }
 
     &:last-child{
@@ -39,7 +41,7 @@
   }
 
   .resume-list__block-title{
-    text-transform: uppercase;
+    text-transform: none;
     color: $color-accent;
     font-size: $font-size-t5;
     line-height: $line-height-t5;

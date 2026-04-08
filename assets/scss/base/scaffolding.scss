@@ -11,10 +11,16 @@ body{
   font-weight: $font-weight-base;
   line-height: $line-height-t3;
   color: $color-text-main;
+  background-color: $color-bg-page;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 hr{
   margin: 0;
+  border: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(92, 78, 196, 0.2), transparent);
 }
 
 ol, ul{
