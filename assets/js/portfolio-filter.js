@@ -1,30 +1,28 @@
 'use strict';
 
-//Filter project cards
-var previousClickedMenuLink = undefined;
-$('.portfolio-menu').on('click', 'a', function(event){
-    event.preventDefault();
+// Filter project cards — 対象は #portfolio 内の .row.project-card すべて（.portfolio-cards 外の先頭カードも含む）
+var previousClickedMenuLink;
 
-    if (previousClickedMenuLink) {
-        previousClickedMenuLink.removeClass('portfolio-menu__link--active');
-    }
-    var link = $(event.target);
-    link.addClass('portfolio-menu__link--active');
-    previousClickedMenuLink = link;
+$('.portfolio-menu').on('click', 'a', function (event) {
+  event.preventDefault();
 
-    var targetTag = $(event.target).data('portfolio-target-tag');
-    var portfolioItems = $('.portfolio-cards').children();
+  var $link = $(this);
 
-    if (targetTag === 'all') {
-        portfolioItems.fadeIn({duration: 500});
-    } else {
-        portfolioItems.hide();
-    }
+  if (previousClickedMenuLink) {
+    previousClickedMenuLink.removeClass('portfolio-menu__link--active');
+  }
+  $link.addClass('portfolio-menu__link--active');
+  previousClickedMenuLink = $link;
 
-    portfolioItems.each(function(index, value){
-        var item = $(value);
-        if (item.data('portfolio-tag') === targetTag) {
-            item.fadeIn({duration: 500});
-        }
-    });
+  var targetTag = $link.attr('data-portfolio-target-tag');
+  var portfolioItems = $('#portfolio .row.project-card');
+
+  if (targetTag === 'all') {
+    portfolioItems.fadeIn({ duration: 300 });
+  } else {
+    portfolioItems.hide();
+    portfolioItems
+      .filter('[data-portfolio-tag="' + targetTag + '"]')
+      .fadeIn({ duration: 300 });
+  }
 });
